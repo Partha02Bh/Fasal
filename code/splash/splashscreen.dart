@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => HomePage(), // Your homepage widget
+          pageBuilder: (context, animation, secondaryAnimation) => LogHomePage(), // Your homepage widget
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             const begin = Offset(0.0, 1.0);
             const end = Offset.zero;
@@ -89,79 +89,5 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   }
 }
 
-
-
-
-// import 'package:flutter/material.dart';
-// import 'dart:async';
-// import 'package:fasalaveer/Auth/logmain.dart'; // Import the homepage or main screen
-
-// class SplashScreen extends StatefulWidget {
-//   @override
-//   _SplashScreenState createState() => _SplashScreenState();
-// }
-
-// class _SplashScreenState extends State<SplashScreen>
-//     with SingleTickerProviderStateMixin {
-//   late AnimationController _controller;
-//   late Animation<double> _animation;
-
-//   @override
-//   void initState() {
-//     super.initState();
-
-//     _controller = AnimationController(
-//       vsync: this,
-//       duration: const Duration(seconds: 3),
-//     );
-
-//     _animation = Tween<double>(begin: 0, end: 1).animate(
-//       CurvedAnimation(
-//         parent: _controller,
-//         curve: Curves.easeInOut,
-//       ),
-//     )..addListener(() {
-//         setState(() {});
-//       });
-
-//     _controller.forward();
-
-//     Timer(const Duration(seconds: 5), () {
-//       // Navigate to the homepage after 3 seconds
-//       Navigator.pushReplacement(
-//         context,
-//         MaterialPageRoute(builder: (context) => HomePage()), // Replace with your homepage widget
-//       );
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(
-//         decoration: const BoxDecoration(
-//           gradient: LinearGradient(
-//             colors: [Color(0xFFD2F8CB), Color(0xFFECF5F6)],
-//             begin: Alignment.topLeft,
-//             end: Alignment.bottomRight,
-//           ),
-//         ),
-//         child: Center(
-//           child: Transform.scale(
-//             scale: 1 + _animation.value, // Logo gets bigger as it reveals
-//             child: Opacity(
-//               opacity: _animation.value,
-//               child: Image.asset(
-//                 'assets/images/logo.png', // Replace with your logo asset path
-//                 width: 150,
-//                 height: 150,
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 
