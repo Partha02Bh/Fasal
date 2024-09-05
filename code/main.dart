@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'FasalVeer',
       theme: ThemeData(
         primaryColor: const Color(0xFF668F4F),
